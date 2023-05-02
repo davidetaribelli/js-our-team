@@ -4,3 +4,28 @@
     margin: 0;
 }
 
+.container{
+    height: 100vh;
+    display: flex;
+    
+    justify-content: center;
+    align-items: center;
+}
+
+.row{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 2em;
+}
+
+.card{
+    width: calc(100% / 3 - 1em);
+    height: calc(100% / 3 - 1em);
+    border: 1px solid black;
+    border-radius: 1em;
+    margin: 0 0.5em;
+    padding: 1rem;
+}
