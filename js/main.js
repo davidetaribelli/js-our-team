@@ -7,7 +7,7 @@ const team = [
     {
         nome: "Wayne Barnett",
         ruolo: "Founder & CEO",
-        foto: "../img/wayne-barnett-founder.jpg"
+        foto: "../img/wayne-barnett-founder-ceo.jpg"
     },
     //secondo membro del team
     {
@@ -49,13 +49,26 @@ for (let i = 0; i < team.length; i++){
     const members = team[i];
     let cardEl = document.createElement("div")
     cardEl.classList.add("card");
-
+    let member;
     for(const key in members){
-        let member = document.createElement("div");
+        member = document.createElement("div");
         member.innerHTML = (members[key]);
         cardEl.appendChild(member)
     }
+
+    const img = team[i].foto;
+    console.log("Immagini", img);
     
+    member.innerHTML = "";
+    let image = document.createElement("div");
+    image.classList.add("member-card");
+    image.innerHTML = `<img src="${img}" />`
+    member.appendChild(image);
+    
+
+
     rowEl.appendChild(cardEl);
 
 }
+
+
