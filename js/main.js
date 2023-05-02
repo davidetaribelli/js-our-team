@@ -1,3 +1,32 @@
+//FUNZIONI
+
+// add card
+function addCard(){
+    for (let i = 0; i < team.length; i++) {
+        const members = team[i];
+        let cardEl = document.createElement("div")
+        cardEl.classList.add("card");
+        let member;
+        for (const key in members) {
+            member = document.createElement("div");
+            member.innerHTML = (members[key]);
+            cardEl.appendChild(member)
+        }
+
+        const img = team[i].foto;
+        member.innerHTML = "";
+        let image = document.createElement("div");
+        image.classList.add("member-card");
+        image.innerHTML = `<img src="${img}" />`
+        member.appendChild(image);
+
+        rowEl.appendChild(cardEl);
+
+    }
+}
+
+
+
 //VARIABILI
 const rowEl = document.querySelector(".row");
 
@@ -42,33 +71,8 @@ const team = [
 ]
 
 
-console.log(team);
 
 
-for (let i = 0; i < team.length; i++){
-    const members = team[i];
-    let cardEl = document.createElement("div")
-    cardEl.classList.add("card");
-    let member;
-    for(const key in members){
-        member = document.createElement("div");
-        member.innerHTML = (members[key]);
-        cardEl.appendChild(member)
-    }
-
-    const img = team[i].foto;
-    console.log("Immagini", img);
-    
-    member.innerHTML = "";
-    let image = document.createElement("div");
-    image.classList.add("member-card");
-    image.innerHTML = `<img src="${img}" />`
-    member.appendChild(image);
-    
-
-
-    rowEl.appendChild(cardEl);
-
-}
+setTimeout(addCard, 2 * 1000);
 
 
